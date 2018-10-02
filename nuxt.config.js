@@ -2,18 +2,27 @@ module.exports = {
   /*
   ** Headers of the page
   */
+ head: {
+  // this htmlAttrs you need
+  htmlAttrs: {
+    lang: 'fr',
+    meta: { rel:"stylesheet",
+           href:"https://unpkg.com/v-data-table/dist/v-data-table.css"
+          }
+  }
+},
+plugins: ['~plugins/vue-instantsearch'],
   head: {
-    title: 'my-project',
+    title: 'alpha',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'alpha test' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  router: { base: '/my-project/' },
   /*
   ** Customize the progress bar color
   */
@@ -21,6 +30,9 @@ module.exports = {
   /*
   ** Build configuration
   */
+ css: [
+  { src: '~assets/css/style.css', lang: 'css' }
+],
   build: {
     /*
     ** Run ESLint on save
@@ -34,7 +46,7 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    extractCSS: true
   }
 }
-
